@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 
-void activite()
+char activite()
 {
 	char activite_A[100];
 	char activite_B[100];
@@ -37,8 +37,8 @@ void activite()
 	return 0;
 
 }
-int main()
-void objet()
+
+char objet()
 {
 	char objet_A[100];
 	char objet_B[100];
@@ -59,16 +59,19 @@ void objet()
 
 	printf("Activite choisie aleatoirement : ");
 	if (random == 0) {
-		printf("%s", objet_A);
+		return objet_A;
 	}
 	else if (random == 1) {
-		printf("%s", objet_B);
+		return objet_B;
 	}
 	else {
-		printf("%s", objet_C);
+		return objet_C;
 	}
+}
 
-
-	return 0;
-
+int main()
+{
+	char activite[100] = activite();
+	char objet[100] = objet();
+	printf("%s et %s", activite, objet);
 }
