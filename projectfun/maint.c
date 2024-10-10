@@ -45,8 +45,6 @@ int main() {
     generer_action(action);
     generer_objet(objet);
 
-    // Génération de l'histoire
-    printf("\nVoici l'histoire générée aléatoirement :\n");
     printf("Un jour, %s se rendait à %s et a %s avec %s.\n", personnage, lieu,  action, objet);
 
     return 0;
