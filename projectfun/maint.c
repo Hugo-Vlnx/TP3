@@ -2,77 +2,52 @@
 #include <time.h>
 #include <stdlib.h>
 
+void generer_action(char* action) {
+    char actions[3][100];
 
-int main()
-{
-	char objet_A[100];
-	char objet_B[100];
-	char objet_C[100];
+    printf("Entrez l'action 1 : ");
+    fgets(actions[0], sizeof(actions[0]), stdin);
 
-	printf("entrez votre activité n°1 : ");
-	fgets(objet_A, sizeof(objet_A), stdin);
+    printf("Entrez l'action 2 : ");
+    fgets(actions[1], sizeof(actions[1]), stdin);
 
-	printf("entrez votre activité n°1 : ");
-	fgets(objet_B, sizeof(objet_B), stdin);
+    printf("Entrez l'action 3 : ");
+    fgets(actions[2], sizeof(actions[2]), stdin);
 
-	printf("entrez votre activité n°1 : ");
-	fgets(objet_B, sizeof(objet_B), stdin);
-
-	srand(time(NULL));
-
-	int random = rand() % 3;
-
-	printf("Activite choisie aleatoirement : ");
-	if (random == 0) {
-		printf("%s", objet_A);
-	}
-	else if (random == 1) {
-		printf("%s", objet_B);
-	}
-	else {
-		printf("%s", objet_C);
-	}
-
-
-	return 0;
-
+    int random = rand() % 3;
+    printf(action, 100, "%s", actions[random]);
 }
-#include <stdio.h>
-#include <time.h>
-#include <stdlib.h>
 
 
-int main()
-{
-	char activite_A[100];
-	char activite_B[100];
-	char activite_C[100];
+void generer_objet(char* objet) {
+    char objets[3][100];
 
-	printf("entrez votre activité n°1 : ");
-	fgets(activite_A, sizeof(activite_A), stdin);
+    printf("Entrez le nom de l'objet 1 : ");
+    fgets(objets[0], sizeof(objets[0]), stdin);
 
-	printf("entrez votre activité n°1 : ");
-	fgets(activite_B, sizeof(activite_B), stdin);
+    printf("Entrez le nom de l'objet 2 : ");
+    fgets(objets[1], sizeof(objets[1]), stdin);
 
-	printf("entrez votre activité n°1 : ");
-	fgets(activite_B, sizeof(activite_B), stdin);
+    printf("Entrez le nom de l'objet 3 : ");
+    fgets(objets[2], sizeof(objets[2]), stdin);
 
-	srand(time(NULL));
+    int random = rand() % 3;
+    printf(objet, 100, "%s", objets[random]);
+}
 
-	int random = rand() % 3;
+int main() {
+    srand(time(NULL));
 
-	printf("Activite choisie aleatoirement : ");
-	if (random == 0) {
-		printf("%s", activite_A);
-	}
-	else if (random == 1) {
-		printf("%s", activite_B);
-	}
-	else {
-		printf("%s", activite_C);
-	}
+    char action[100];
+    char objet[100];
 
+    
+    generer_action(action);
+    generer_objet(objet);
 
-	return 0;
+    // Génération de l'histoire
+    printf("\nVoici l'histoire générée aléatoirement :\n");
+    printf("Un jour, %s se rendait à %s et a %s avec %s.\n", personnage, lieu,  action, objet);
 
+    return 0;
 }
